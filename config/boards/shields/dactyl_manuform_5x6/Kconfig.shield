@@ -1,5 +1,7 @@
-config SHIELD_DACTYL_MANUFORM_5x6_LEFT
-    def_bool $(shields_list_contains,dactyl_manuform_5x6_left)
+config SHIELD_DACTYL_MANUFORM_5X6_LEFT
+    bool "dactyl_manuform_5x6_left"
+    select ZMK_SPLIT_KEYBOARD
 
-config SHIELD_DACTYL_MANUFORM_5x6_RIGHT
-    def_bool $(shields_list_contains,dactyl_manuform_5x6_right)
+config SHIELD_DACTYL_MANUFORM_5X6_RIGHT
+    bool "dactyl_manuform_5x6_right"
+    select ZMK_SPLIT_KEYBOARD
