@@ -1,0 +1,60 @@
+#include <dt-bindings/zmk/matrix_transform.h>
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,matrix_transform = &default_transform;
+    };
+
+    default_transform: keymap_transform_0 {
+        compatible = "zmk,matrix-transform";
+        columns = <12>;
+        rows = <7>;
+
+// Physical layout — left half cols 0-5, right half cols 6-11
+//
+// Rows 0-4: main 5-row grid, 6 cols per side
+// | R0C0  R0C1  R0C2  R0C3  R0C4  R0C5 |   | R0C6  R0C7  R0C8  R0C9  R0C10 R0C11 |  <- top nav row
+// | R1C0  R1C1  R1C2  R1C3  R1C4  R1C5 |   | R1C6  R1C7  R1C8  R1C9  R1C10 R1C11 |  <- QWERTY
+// | R2C0  R2C1  R2C2  R2C3  R2C4  R2C5 |   | R2C6  R2C7  R2C8  R2C9  R2C10 R2C11 |  <- home row
+// | R3C0  R3C1  R3C2  R3C3  R3C4  R3C5 |   | R3C6  R3C7  R3C8  R3C9  R3C10 R3C11 |  <- bottom letters
+// | R4C0  R4C1  R4C2  R4C3  R4C4  R4C5 |   | R4C6  R4C7  R4C8  R4C9  R4C10 R4C11 |  <- number row
+//
+// Row 5, cols 2-3 only: extra keys in middle columns (6th row for cols 2&3)
+//                | R5C2  R5C3 |                           | R5C8  R5C9 |
+//
+// Thumb clusters — 4 positions per side (THMB.2 is already wired into RC(4,4)/RC(4,10)):
+// Left:  LTHMB.1=RC(5,5)  LTHMB.0=RC(6,5)  LTHMB.3=RC(6,1)  LTHMB.4=RC(6,0)
+// Right: RTHMB.1=RC(5,11) RTHMB.0=RC(6,11) RTHMB.3=RC(6,7)  RTHMB.4=RC(6,6)
+
+        map = <
+// Rows 0-4: main grid (left half then right half, combined into 12 cols)
+RC(0,0)  RC(0,1)  RC(0,2)  RC(0,3)  RC(0,4)  RC(0,5)    RC(0,6)  RC(0,7)  RC(0,8)  RC(0,9)  RC(0,10) RC(0,11)
+RC(1,0)  RC(1,1)  RC(1,2)  RC(1,3)  RC(1,4)  RC(1,5)    RC(1,6)  RC(1,7)  RC(1,8)  RC(1,9)  RC(1,10) RC(1,11)
+RC(2,0)  RC(2,1)  RC(2,2)  RC(2,3)  RC(2,4)  RC(2,5)    RC(2,6)  RC(2,7)  RC(2,8)  RC(2,9)  RC(2,10) RC(2,11)
+RC(3,0)  RC(3,1)  RC(3,2)  RC(3,3)  RC(3,4)  RC(3,5)    RC(3,6)  RC(3,7)  RC(3,8)  RC(3,9)  RC(3,10) RC(3,11)
+RC(4,0)  RC(4,1)  RC(4,2)  RC(4,3)  RC(4,4)  RC(4,5)    RC(4,6)  RC(4,7)  RC(4,8)  RC(4,9)  RC(4,10) RC(4,11)
+// Row 5 extra keys (middle cols only)
+RC(5,2)  RC(5,3)    RC(5,8)  RC(5,9)
+// Left thumb cluster: LTHMB.1  LTHMB.0  LTHMB.3  LTHMB.4
+RC(5,5)  RC(6,5)    RC(6,1)  RC(6,0)
+// Right thumb cluster: RTHMB.1  RTHMB.0  RTHMB.3  RTHMB.4
+RC(5,11) RC(6,11)   RC(6,7)  RC(6,6)
+        >;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        label = "KSCAN";
+        diode-direction = "col2row";
+        row-gpios
+            = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Row 0 - P0.29
+            , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Row 1 - P0.02
+            , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Row 2 - P1.15
+            , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Row 3 - P1.13
+            , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Row 4 - P1.11
+            , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Row 6 - P0.10
+            , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Row 6 - P0.09
+            ;
+    };
+};
