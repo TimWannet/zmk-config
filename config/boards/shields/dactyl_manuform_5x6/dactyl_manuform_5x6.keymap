@@ -51,11 +51,11 @@
 // ------------------------ ROW 0 — nav row ----------------------------------
 // Left half (col 0→5)
    &kp ESC    &kp PSCRN  &kp PG_UP  &kp PG_DN  &kp HOME   &kp END 
-//Right half (col 6→11)
+// Right half (col 6→11)
    &kp CAPS   &to LWR    &kp C_AL_CALC   &kp C_PP  &kp MINUS  &kp EQUAL 
 // ------------------------ ROW 1 — QWERTY ─----------------------------------
-   &kp C_AC_INS   &kp Q      &kp W      &kp E      &kp R      &kp T
-   &kp Y          &kp U      &kp I      &kp O      &kp P      &kp BSLH
+   &kp INS   &kp Q      &kp W      &kp E      &kp R      &kp T
+   &kp Y     &kp U      &kp I      &kp O      &kp P      &kp BSLH
 // ------------------------ ROW 2 — home row----------------------------------
    &kp CAPS  &kp A      &kp S      &kp D      &kp F      &kp G
    &kp H     &kp J      &kp K      &kp L      &kp SEMI   &kp SQT
