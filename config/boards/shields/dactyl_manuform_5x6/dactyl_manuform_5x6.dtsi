@@ -37,9 +37,11 @@ RC(4,0)  RC(4,1)  RC(4,2)  RC(4,3)  RC(4,4)  RC(4,5)    RC(4,6)  RC(4,7)  RC(4,8
 // Row 5 extra keys (middle cols only)
 RC(5,2)  RC(5,3)    RC(5,8)  RC(5,9)
 // Left thumb cluster
-RC(5,4)  RC(5,5)  RC(6,5)  RC(6,0)   RC(6,1)
+RC(5,4)  RC(5,5)  RC(6,5)  
+RC(6,0)   RC(6,1)
 // Right thumb cluster not working yet
-RC(6,6)  RC(5,6)  RC(5,7)  RC(6,10)  RC(6,11)
+RC(6,6)  RC(5,6)  RC(5,7)  
+RC(6,10)  RC(6,11)
         >;
     };
 

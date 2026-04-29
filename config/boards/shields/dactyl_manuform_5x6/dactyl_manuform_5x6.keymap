@@ -71,10 +71,12 @@
    &kp DOWN       &kp UP                        &kp LEFT       &kp RIGHT
 // ------------------------ THUMB CLUSTERS -----------------------------------
 // Left thumbs:
-   &kp LALT    &kp SPACE   &kp ENTER      &kp LSHFT   &kp PERIOD
+   &kp LSHFT    &kp SPACE   &kp ENTER
+   &kp LALT   &kp PERIOD
 
 // Right thumbs:
-   &kp ENTER   &kp SPACE   &kp BACKSPACE  &kp RSHFT   &kp COMMA
+   &kp BACKSPACE   &kp SPACE   &kp RSHFT  
+   &kp COMMA    &kp RALT
             >;
         };
 
