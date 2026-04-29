@@ -36,10 +36,10 @@ RC(3,0)  RC(3,1)  RC(3,2)  RC(3,3)  RC(3,4)  RC(3,5)    RC(3,6)  RC(3,7)  RC(3,8
 RC(4,0)  RC(4,1)  RC(4,2)  RC(4,3)  RC(4,4)  RC(4,5)    RC(4,6)  RC(4,7)  RC(4,8)  RC(4,9)  RC(4,10) RC(4,11)
 // Row 5 extra keys (middle cols only)
 RC(5,2)  RC(5,3)    RC(5,8)  RC(5,9)
-// Left thumb cluster: LTHMB.1  LTHMB.0  LTHMB.3  LTHMB.4
-RC(5,5)  RC(6,5)    RC(6,1)  RC(6,0)
-// Right thumb cluster: RTHMB.1  RTHMB.0  RTHMB.3  RTHMB.4
-RC(5,11) RC(6,11)   RC(6,7)  RC(6,6)
+// Left thumb cluster
+RC(5,4)  RC(5,5)  RC(6,6)  RC(6,0)  RC(6,1)
+// Right thumb cluster
+RC(5,10) RC(5,11) RC(6,11) RC(6,6)  RC(6,7)
         >;
     };
 
@@ -53,7 +53,7 @@ RC(5,11) RC(6,11)   RC(6,7)  RC(6,6)
             , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Row 2 - P1.15
             , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Row 3 - P1.13
             , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Row 4 - P1.11
-            , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Row 6 - P0.10
+            , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Row 5 - P0.10
             , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Row 6 - P0.09
             ;
     };
