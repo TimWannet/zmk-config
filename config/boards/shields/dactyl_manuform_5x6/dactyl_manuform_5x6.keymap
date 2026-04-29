@@ -113,7 +113,7 @@
             bindings = <
 // ROW 0
    &none    &none    &none    &none    &none    &none
-   &to LWR  &none    &none    &bootloader  &out OUT_BLE    &out OUT_USB
+   &to LWR  &none    &none    &none    &out OUT_BLE    &out OUT_USB
 // ROW 1
    &none    &none    &none    &none    &none    &none
    &none    &none    &none    &none    &none    &none
